@@ -1,8 +1,8 @@
 import java.util.ArrayList;
-        import java.util.List;
-        import java.util.Scanner;
+import java.util.List;
+import java.util.Scanner;
 
-public abstract class Client {
+public class Client {
     String name;
     String pesel;
     String phone;
@@ -15,48 +15,36 @@ public abstract class Client {
         this.email = email;
     }
 
+    private static List<Client> clients = new ArrayList<>();
 
     public static void addClient() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("podaj imie");
         String inputName = scanner.nextLine();
-//        System.out.println("podaj pesel");
-//        String inputPesel = scanner.nextLine();
-//        System.out.println("podaj telefon");
-//        String inputPhone = scanner.nextLine();
-//        System.out.println("podaj email");
-//        String inputEmail = scanner.nextLine();
-        List<String> clients = new ArrayList<>();
-        clients.add(inputName);
-        System.out.println("clients = " + clients);
-        for (String client : clients) {
-            System.out.println(client);
-        }
+        System.out.println("podaj pesel");
+        String inputPesel = scanner.nextLine();
+        System.out.println("podaj telefon");
+        String inputPhone = scanner.nextLine();
+        System.out.println("podaj email");
+        String inputEmail = scanner.nextLine();
+        Client inputClient = new Client(inputName, inputPesel, inputPhone, inputEmail);
+        clients.add(inputClient);
 
 
     }
-//    public static void displayClients(){
-//        for (Client client : clients){
-//            System.out.println("jsdfkjs");
-//        }
-//
-//
-//    }
+
+    public static void getClients() {
 
 
+        for (int i = 0; clients.size() > i; i++) {
+
+            System.out.println(clients.get(i).name);
+            System.out.println(clients.get(i).pesel);
+            System.out.println(clients.get(i).phone);
+            System.out.println(clients.get(i).email);
+
+
+        }
+
+    }
 }
-Footer
-        © 2022 GitHub, Inc.
-        Footer navigation
-        Terms
-        Privacy
-        Security
-        Status
-        Docs
-        Contact GitHub
-        Pricing
-        API
-        Training
-        Blog
-        About
-        You have no unread notifications
